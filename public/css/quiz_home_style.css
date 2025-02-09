@@ -1,0 +1,104 @@
+header h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
+    align-self: flex-end;
+}
+header{
+    height: 92dvh;
+    padding: 2em auto;
+    display: grid;
+    grid-template-rows: 50% repeat(3,10%) auto;
+    /* gap: 1em; */
+    place-items: center;
+    text-align: center;
+    animation: header_animation 1s ease-in-out 1 forwards ;
+}
+header img{
+    /* width: 50%; */
+    height: 100%;
+    object-fit: contain;
+}
+@keyframes header_animation {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+section div:is(.full_width) {
+    background-color: rgb(199, 199, 199);
+    padding: 8% 10% ;
+    text-wrap: balance;
+}
+.code{
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    width: fit-content;
+    margin: 1em auto;
+    padding: 1em;
+    font-weight: bold;
+    color: rgb(0, 136, 255);
+    background-color: rgb(228, 228, 228);
+}
+.code::after{
+    content:attr(tag);
+    display: block;
+    position: absolute;
+    font-size: small;
+    font-weight: normal;
+    color: white;
+    white-space: nowrap;
+    top: 120%;
+}
+
+.button_container{
+    height: 52dvh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin: 2em auto;
+    gap: 1em;
+    position: relative;
+}
+.button_container::after{
+    content:attr(tag);
+    position: absolute;
+    font-weight: normal;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+    top: 80%;
+}
+.join_button{
+    border-radius: 10px;
+    padding: 1em 2em;
+    width: max-content;
+    background-color: rgb(143, 154, 192);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+.highlight{
+    /* margin: 2rem auto 0; */
+    background-color: var(--highlight);
+    font-family: var(--h3);
+    font-weight: bold;
+    transition: 0s;
+    &:hover{
+        background-color: var(--highlight-hover);
+    }
+}
+.edit_button{
+    background-color: rgb(172, 209, 243);
+    color: black;
+}
+#qrcode{
+    margin: 2em auto;
+    width: fit-content;
+    padding: 1em;
+    background-color: white;
+}
+h3{
+    width: 100%;
+    margin-bottom: 2em;
+}
